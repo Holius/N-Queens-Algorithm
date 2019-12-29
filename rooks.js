@@ -27,24 +27,21 @@ function generateN (n) {
     }
     return nAmount;
 }
-const clone = (items) => items.map(item => Array.isArray(item) ? clone(item) : item);
 
 function countRookSolutions (n) {
+    if (n === 0) return 1;
     let count = 0;
     const initArray = initMatrix(n);
     const limit = n;
     
     function inner (pieces, matrix, row, colA) {
-        if (limit === 0) return 1;
         if (pieces === limit) {
             count++
             return
-        } else if (row > limit) {
-            return
-        } else 
+        } 
         generateN(limit).forEach( col => {
             if (colA.indexOf(col) === -1) {
-                let copy = clone(matrix);
+                let copy = matrix.slice();
                 copy[row][col] = 1;
                 inner(pieces + 1, copy, row + 1, [col, ...colA])
             }
@@ -59,13 +56,6 @@ function countRookSolutions (n) {
 }
 
 console.log( 
-    JSON.stringify(countRookSolutions())
+    JSON.stringify(countRookSolutions(8))
 )
 // [1, 1, 2, 6, 24, 120, 720, 5040, 40320] expected Rooks solution numbers
-
-
-
-
-
-
-//[1, 1, 0, 0, 2, 10, 4, 40, 92]
