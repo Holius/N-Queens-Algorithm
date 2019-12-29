@@ -96,9 +96,4 @@ function countQueenSolutions (n) {
     }
     return count
 }
-// -------------------------- end of solution ------------------------------
-const test = [];
-for (i = 0; i < 9; i++) {
-    test.push(countQueenSolutions(i));
-}
-console.log(JSON.stringify(test)) // expected [1, 1, 0, 0, 2, 10, 4, 40, 92])
+// [1, 1, 0, 0, 2, 10, 4, 40, 92] expected output for n = 0 through 8

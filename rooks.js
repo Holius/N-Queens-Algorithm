@@ -54,8 +54,4 @@ function countRookSolutions (n) {
     }
     return count
 }
-
-console.log( 
-    JSON.stringify(countRookSolutions(8))
-)
-// [1, 1, 2, 6, 24, 120, 720, 5040, 40320] expected Rooks solution numbers
+// [1, 1, 2, 6, 24, 120, 720, 5040, 40320] expected output for n = 0 through 8
