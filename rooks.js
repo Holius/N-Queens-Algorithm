@@ -59,6 +59,13 @@ function countRookSolutions (n) {
 }
 
 console.log( 
-    JSON.stringify(countRookSolutions(9))
+    JSON.stringify(countRookSolutions())
 )
-// [1, 1, 2, 6, 24, 120, 720, 5040, 40320]
+// [1, 1, 2, 6, 24, 120, 720, 5040, 40320] expected Rooks solution numbers
+
+
+
+
+
+
+//[1, 1, 0, 0, 2, 10, 4, 40, 92]
